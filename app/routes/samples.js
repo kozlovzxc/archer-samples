@@ -17,6 +17,10 @@ reflected.get('/json', function(req, res, next) {
   res.render('samples/reflected/json', { text: JSON.stringify(req.query.text) })
 })
 
+reflected.get('/attribute', function(req, res, next) {
+  res.render('samples/reflected/attribute', { attribute: req.query.attribute })
+})
+
 samples.use('/dom', dom);
 samples.use('/reflected', reflected);
 
