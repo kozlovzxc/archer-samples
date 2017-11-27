@@ -10,7 +10,11 @@ dom.get('/hash', function(req, res, next) {
 var reflected = express.Router();
 
 reflected.get('/simple', function(req, res, next) {
-  res.render('samples/reflected/simple', { text: req.query.text})
+  res.render('samples/reflected/simple', { text: req.query.text })
+})
+
+reflected.get('/json', function(req, res, next) {
+  res.render('samples/reflected/json', { text: JSON.stringify(req.query.text) })
 })
 
 samples.use('/dom', dom);
