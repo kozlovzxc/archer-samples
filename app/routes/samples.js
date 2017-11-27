@@ -1,13 +1,19 @@
 var express = require('express');
 var samples = express.Router();
 
-/* GET some page. */
-samples.get('/domxss-hash', function(req, res, next) {
-  res.render('samples/domxss-hash');
+var dom = express.Router();
+
+dom.get('/hash', function(req, res, next) {
+  res.render('samples/dom/hash');
 });
 
-samples.get('/reflected-simple', function(req, res, next) {
-  res.render('samples/reflected-simple', { text: req.query.text})
+var reflected = express.Router();
+
+reflected.get('/simple', function(req, res, next) {
+  res.render('samples/reflected/simple', { text: req.query.text})
 })
+
+samples.use('/dom', dom);
+samples.use('/reflected', reflected);
 
 module.exports = samples;
