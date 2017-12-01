@@ -13,6 +13,10 @@ reflected.get('/simple', function(req, res, next) {
   res.render('samples/reflected/simple', { text: req.query.text });
 });
 
+reflected.get('/script', function(req, res, next) {
+  res.render('samples/reflected/inscript', { value: req.query.value });
+});
+
 reflected.get('/json', function(req, res, next) {
   res.render('samples/reflected/json', { text: JSON.stringify(req.query.text) });
 });
@@ -21,11 +25,11 @@ reflected.get('/attribute', function(req, res, next) {
   res.render('samples/reflected/attribute', { attribute: req.query.attribute });
 });
 
-reflected.get('/cookie', function(req, res, next) {
-  if (req.cookies.cookieValue === undefined) {
-    res.render('samples/reflected/cookie', { text: 'No cookie' });
-  } else {
-    res.render('samples/reflected/cookie', { text: req.cookies.cookieValue });
+	reflected.get('/cookie', function(req, res, next) {
+	  if (req.cookies.cookieValue === undefined) {
+	    res.render('samples/reflected/cookie', { text: 'No cookie' });
+	  } else {
+	    res.render('samples/reflected/cookie', { text: req.cookies.cookieValue });
   }
 });
 
