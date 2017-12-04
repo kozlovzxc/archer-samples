@@ -1,3 +1,9 @@
+# Archer-samples
+
+[![Build Status](https://travis-ci.org/kozlovzxc/archer-samples.svg?branch=master)](https://travis-ci.org/kozlovzxc/archer-samples)
+
+XSS samples for archer testing.
+
 # Installation
 
 Install docker, docker-compose, npm
