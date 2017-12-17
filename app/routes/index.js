@@ -11,9 +11,11 @@ router.get('/', function(req, res) {
 const dom = require('./dom');
 const reflected = require('./reflected');
 const stored = require('./stored');
+const self = require('./self');
 
 router.use('/dom', dom);
 router.use('/reflected', reflected);
 router.use('/stored', stored);
+router.use('/self', self);
 
 module.exports = router;
