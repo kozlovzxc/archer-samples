@@ -3,8 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www",
-    "start:dev": "nodemon ./bin/www --watch views --watch routes --watch public",
+    "start": "sequelize db:migrate && node ./bin/www",
+    "start:dev": "sequelize db:migrate && nodemon ./bin/www --watch views --watch routes --watch public",
     "lint": "eslint --ext .js ."
   },
   "dependencies": {
@@ -17,6 +17,7 @@
     "pg": "^6.4.2",
     "pg-hstore": "^2.3.2",
     "sequelize": "^4.28.2",
+    "sequelize-cli": "^3.2.0",
     "serve-favicon": "~2.4.5"
   },
   "devDependencies": {
