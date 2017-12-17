@@ -1,15 +1,6 @@
 'use strict';
 
 const express = require('express');
-const samples = express.Router();
-const db = require('../models');
-
-const dom = express.Router();
-
-dom.get('/hash', (req, res) => {
-  res.render('samples/dom/hash');
-});
-
 const reflected = express.Router();
 
 reflected.get('/simple', (req, res) => {
@@ -46,19 +37,4 @@ reflected.post('/cookie', (req, res) => {
 
 });
 
-const stored = express.Router();
-
-stored.get('/simple', (req, res) => {
-  db.post
-    .create({
-      data: 'kek!',
-    })
-    .then(() => res.json('created'))
-    .catch((err) => res.status(500).json(err));
-});
-
-samples.use('/dom', dom);
-samples.use('/reflected', reflected);
-samples.use('/stored', stored);
-
-module.exports = samples;
+module.exports = reflected;
