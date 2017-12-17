@@ -1,0 +1,19 @@
+<div class="container">
+  <h3>Эксплуатация</h3>
+  <blockquote>example.com/path?text=&lt;script&gt;alert(document.cookie)&lt;/script&gt;</blockquote>
+  <h1>Посты</h1>
+  <form method="POST">
+    <div class="form-group">
+      <label for="postContent">Post content</label>
+      <input type="text" name="data" class="form-control" id="postContent" placeholder="Post content">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+  {{#each posts}}
+    <div class="card">
+      <div class="card-body">
+        {{{data}}}
+      </div>
+    </div>
+  {{/each}}
+</div>

@@ -6,10 +6,23 @@ const stored = express.Router();
 
 stored.get('/simple', (req, res) => {
   db.post
-    .create({
-      data: 'kek!',
+    .all()
+    .then((posts) => {
+      res.render('samples/stored/simple', {
+        posts,
+      });
     })
-    .then(() => res.json('created'))
+    .catch((err) => res.json(err));
+});
+stored.post('/simple', (req, res) => {
+  db.post
+    .create({
+      data: req.body.data,
+    })
+    .then(() => db.post.all())
+    .then((posts) => res.render('samples/stored/simple', {
+      posts,
+    }))
     .catch((err) => res.status(500).json(err));
 });
 
