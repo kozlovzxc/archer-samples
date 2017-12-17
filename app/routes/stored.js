@@ -29,7 +29,7 @@ stored.get('/attribute', (req, res) => {
   db.attribute
     .all()
     .then((posts) => {
-      res.render('samples/stored/attribute', {
+      res.render('stored/attribute', {
         posts,
       });
     })
@@ -41,7 +41,7 @@ stored.post('/attribute', (req, res) => {
       data: req.body.data,
     })
     .then(() => db.attribute.all())
-    .then((posts) => res.render('samples/stored/attribute', {
+    .then((posts) => res.render('stored/attribute', {
       posts,
     }))
     .catch((err) => res.status(500).json(err));
@@ -50,7 +50,7 @@ stored.get('/json', (req, res) => {
   db.json
     .all()
     .then((posts) => {
-      res.render('samples/stored/json', {
+      res.render('stored/json', {
         posts,
       });
     })
@@ -62,7 +62,7 @@ stored.post('/json', (req, res) => {
       data: req.body.data,
     })
     .then(() => db.json.all())
-    .then((posts) => res.render('samples/stored/json', {
+    .then((posts) => res.render('stored/json', {
       posts,
     }))
     .catch((err) => res.status(500).json(err));
@@ -71,7 +71,7 @@ stored.get('/script', (req, res) => {
   db.inscript
     .all()
     .then((posts) => {
-      res.render('samples/stored/inscript', {
+      res.render('stored/inscript', {
         posts,
       });
     })
@@ -83,7 +83,7 @@ stored.post('/script', (req, res) => {
       data: req.body.data,
     })
     .then(() => db.inscript.all())
-    .then((posts) => res.render('samples/stored/inscript', {
+    .then((posts) => res.render('stored/inscript', {
       posts,
     }))
     .catch((err) => res.status(500).json(err));
