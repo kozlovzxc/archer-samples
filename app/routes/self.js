@@ -15,4 +15,8 @@ self.get('/cookie', (req, res) => {
   });
 });
 
+self.get('/input', (req, res) => {
+  res.render('self/input');
+});
+
 module.exports = self;
