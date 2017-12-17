@@ -4,7 +4,7 @@ module.exports = (sequelize, DataTypes) => {
     data: DataTypes.STRING
   }, {
     classMethods: {
-      associate: function(models) {
+      associate: function(models) { // eslint-disable-line no-unused-vars
         // associations can be defined here
       }
     }
