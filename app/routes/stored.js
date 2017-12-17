@@ -8,7 +8,7 @@ stored.get('/simple', (req, res) => {
   db.post
     .all()
     .then((posts) => {
-      res.render('samples/stored/simple', {
+      res.render('stored/simple', {
         posts,
       });
     })
@@ -20,7 +20,7 @@ stored.post('/simple', (req, res) => {
       data: req.body.data,
     })
     .then(() => db.post.all())
-    .then((posts) => res.render('samples/stored/simple', {
+    .then((posts) => res.render('stored/simple', {
       posts,
     }))
     .catch((err) => res.status(500).json(err));
