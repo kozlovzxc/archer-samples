@@ -67,6 +67,28 @@ stored.post('/json', (req, res) => {
     }))
     .catch((err) => res.status(500).json(err));
 }); 
+stored.get('/script', (req, res) => {
+  db.inscript
+    .all()
+    .then((posts) => {
+      res.render('samples/stored/inscript', {
+        posts,
+      });
+    })
+    .catch((err) => res.json(err));
+});
+stored.post('/script', (req, res) => {
+  db.inscript
+    .create({
+      data: req.body.data,
+    })
+    .then(() => db.inscript.all())
+    .then((posts) => res.render('samples/stored/inscript', {
+      posts,
+    }))
+    .catch((err) => res.status(500).json(err));
+}); 
+
 
 
 module.exports = stored;
