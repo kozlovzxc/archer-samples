@@ -32,7 +32,15 @@
       <div class="card">
         <div class="card-body">
           <h4 class="card-title">XSS inside HTML attribute</h4>
-          <a href="/reflected/attribute?attribute=//yandex.ru" class="btn btn-primary btn-block">Check this out</a>
+          <a href="/reflected/attribute?attribute=http://yandex.ru" class="btn btn-primary btn-block">Check this out</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title">XSS via redirect</h4>
+          <a href="/reflected/redirect?retpath=http://yandex.ru" class="btn btn-primary btn-block">Check this out</a>
         </div>
       </div>
     </div>

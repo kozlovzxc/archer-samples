@@ -19,6 +19,10 @@ reflected.get('/attribute', (req, res) => {
   res.render('reflected/attribute', { attribute: req.query.attribute });
 });
 
+reflected.get('/redirect', (req, res) => {
+  res.render('reflected/redirect', { retpath: req.query.retpath });
+});
+
 reflected.get('/cookie', (req, res) => {
   if (req.cookies.cookieValue === undefined) {
     res.render('reflected/cookie', { text: 'No cookie' });
