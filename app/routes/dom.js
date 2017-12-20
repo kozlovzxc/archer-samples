@@ -29,4 +29,9 @@ dom.post('/ajax', (req, res) => {
   res.render('dom/ajax');
 });
 
+
+dom.get('/redirect', (req, res) => {
+  res.render('dom/redirect');
+});
+
 module.exports = dom;
