@@ -32,7 +32,15 @@
       <div class="card">
         <div class="card-body">
           <h4 class="card-title">XSS inside HTML attribute</h4>
-          <a href="/reflected/attribute?attribute=//yandex.ru" class="btn btn-primary btn-block">Check this out</a>
+          <a href="/reflected/attribute?attribute=http://yandex.ru" class="btn btn-primary btn-block">Check this out</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title">XSS via redirect</h4>
+          <a href="/reflected/redirect?retpath=http://yandex.ru" class="btn btn-primary btn-block">Check this out</a>
         </div>
       </div>
     </div>
@@ -50,8 +58,24 @@
     <div class="col-md-4">
       <div class="card">
         <div class="card-body">
-          <h4 class="card-title">XSS via evaling url hash</h4>
+          <h4 class="card-title">XSS via url hash</h4>
           <a href="/dom/hash#document.write('<h1>test</h1>')" class="btn btn-primary btn-block">Check this out</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title">XSS via ajax data</h4>
+          <a href="/dom/ajax" class="btn btn-primary btn-block">Check this out</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title">XSS via redirect</h4>
+          <a href="/dom/redirect?retpath=/" class="btn btn-primary btn-block">Check this out</a>
         </div>
       </div>
     </div>
